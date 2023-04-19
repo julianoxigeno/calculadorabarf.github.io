@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculadora Tribu Natural</title>
+
+<link rel="stylesheet" type="text/css" href="estilos.css">
+
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+	
+<!-- CSS de Bootstrap -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Hind+Siliguri&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg-light shadow-bottom">
+  <div class="container-fluid container" >
+    <a class="navbar-brand" href="#"><img src="images/logo.webp"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <!-- <a class="nav-link text-uppercase font-weight-bold" style="color: #81b927" href="index.html">Volver</a> -->
+          <a class="nav-link font-weight-bold" style="color: #81b927" href="index.html"><i class="bi bi-arrow-left"></i> Volver</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<p>&nbsp;</p>
+
+<div class="container my-5">
+  <!-- <a href="index.html" class="btn btn-success btn-volver"><i class="bi bi-arrow-left"></i> Volver</a>  -->
+      <div class="row justify-content-center">
+
+  <div class="card">
+<div class="container" style="text-align: center;">
+<div class="row">
+<h1 class="text-center">CALCULADORA DE TRIBU NATURAL</h1>
+<p><strong>Mi peludito es:</strong><br>
+
+</p>
+
+<div class="tipo" name="tipo">
+<input type="radio" id="contactChoice1" name="tipo" value="1">
+<label for="contactChoice1">Cachorro</label>
+<input type="radio" id="contactChoice2" name="tipo" value="2">
+<label for="contactChoice2">Adulto <span class="mayor">(Mayor de 12 meses)</span></label>
+</div>
+<hr>
+
+<div style="text-align: center;">
+<div id="adultos" style="display:none"><select onchange="val()" id="select_id"><option value="Seleccione su Peso"> Seleccione su Peso</option>
+<option value="50">Perros minis de 1 a 3 Kilos</option>
+<option value="100">Perros minis de 4 a 5 Kilos</option>
+<option value="150">Perro pequeños de 6 a 8 Kilos</option>
+<option value="200">Perros pequeños 9 a 12 Kilos</option>
+<option value="300">Perros medianos 13 a 17 Kilos</option>
+<option value="500">Perros medianos 22 a 28 Kilos</option>
+<option value="600">Perros grandes 29 a 35 Kilos</option>
+<option value="800">Perros grandes 36 a 44 Kilos</option>
+<option value="1000">Perros gigantes 45 a 60 Kilos</option>
+
+</select></div><div id="cachorros" style="display:none"><div id="cachorroskilos"><select onchange="calcular()" id="cachorro_kilo"><option value="0"> Seleccione su Peso</option>
+<option value="2">1 a 2 Kilos</option>
+<option value="4">3 a 4 Kilos</option>
+<option value="6">5 a 6 Kilos</option>
+<option value="8">7 a 8 Kilos</option>
+<option value="10">9 a 10 Kilos</option>
+<option value="12">11 a 12 Kilos</option>
+<option value="14">13 a 14 Kilos</option>
+<option value="16">15 a 16 Kilos</option>
+<option value="18">17 a 18 Kilos</option>
+<option value="20">19 a 20 Kilos</option>
+<option value="22">21 a 22 Kilos</option>
+<option value="24">23 a 24 Kilos</option>
+<option value="26">25 a 26 Kilos</option>
+<option value="28">27 a 28 Kilos</option>
+<option value="30">29 a 30 Kilos</option>
+<option value="32">31 a 32 Kilos</option>
+<option value="34">33 a 34 Kilos</option>
+<option value="36">35 a 36 Kilos</option>
+<option value="38">37 a 38 Kilos</option>
+<option value="40">39 a 40 Kilos</option>
+<option value="42">41 a 42 Kilos</option>
+<option value="43">42 a 43 Kilos</option>
+<option value="45">44 a 45 Kilos</option>
+
+</select></div><div id="cachorrosedades"><select onchange="calcular()" id="cachorro_meses"><option value="0"> Seleccione su Edad</option>
+<option value="10"> 2 a 3 Meses</option>
+<option value="8"> 4 a 5 Meses</option>
+<option value="6"> 6 a 7 Meses</option>
+<option value="4"> 8 a 9 Meses</option>
+<option value="3"> 10 a 11 Meses</option>
+<option value="2"> 11 a 12 Meses</option>
+</select></div></div><div class="resultado" id="resultado3"> </div>
+</div>
+
+
+<span class="cucharadas"></span><p></p></div>
+</div> <!-- .et_pb_text --><div class="et_pb_module et_pb_code et_pb_code_0">
+<div class="">
+<div class="scoops"></div>
+
+</div>
+</div> <!-- .et_pb_code -->
+
+
+
+<div class="container">
+<div class="row">
+
+<div class="col-md-4">
+  <div class="card">
+    <div class="card-body">
+
+<span class="imagen"><img style="width: 60px;" src="images/scoops.png" alt="" title="scoops" height="auto" width="auto"></span>
+<div id="desayuno" class="">
+<div><p>0</p></div>
+</div><div class="">
+<div class="lineab"><p>Desayuno</p></div>
+</div> <!-- .et_pb_text -->
+</div> 
+</div></div>
+
+<div class="col-md-4">
+  <div class="card">
+    <div class="card-body">
+<span class="imagen"><img style="width: 60px;" src="images/scoops.png" alt="" title="scoops" height="auto" width="auto"></span>
+<div id="almuerzo" class="">
+<div ><p>0</p></div>
+</div><div class="">
+<div class="lineab"><p>Almuerzo</p></div>
+</div> 
+</div> 
+</div></div>
+
+<div class="col-md-4">
+  <div class="card">
+    <div class="card-body">
+<span class="imagen"><img style="width: 60px;" src="images/scoops.png" alt="" title="scoops" height="auto" width="auto"></span>
+<div id="cena" class="">
+<div ><p>0</p></div>
+</div> <div class="lineab"><p>Cena</p></div>
+</div>
+</div></div>
+<p>&nbsp;</p>
+</div> <!-- row -->
+</div> <!-- container -->
+</div> <!-- container -->
+</div> <!-- container -->
+
+</div> <!-- container -->
+
+
+<script type="text/javascript" src="calcunatu.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
